@@ -7,7 +7,7 @@ date_default_timezone_set('Asia/Shanghai');
 $username = $_SESSION['username'];
 $text = base64_encode(RemoveXSS($_POST['text']));
 $time = date("Y-m-d H:i:s");
-$conn = conn();
+$conn = connect();
 
 $sql = "insert into message (username, text, time) values ('$username', '$text', '$time')";
 if (mysqli_query($conn, $sql)) {

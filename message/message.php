@@ -19,7 +19,7 @@
         <?php
         include "../include/conn.php";
         
-        $conn = conn();
+        $conn = connect();
         $sql = "select username,text,time from message";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) {

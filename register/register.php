@@ -14,7 +14,7 @@ if ($username == "" || $password1 == "") {
 } elseif (preg_match("/[^0-9a-zA-Z_]/", $username) || preg_match("/[^0-9a-zA-Z]/", $password1) || strlen($username) > 20 || strlen($password1) > 20) {
     echo "<script>alert('用户名或密码不符合格式！');history.go(-1);</script>";
 } else {
-    $conn = conn();
+    $conn = connect();
     $sql = "select * from user where username='$username'";
     if ($result = mysqli_query($conn, $sql)) {
         $row = mysqli_fetch_row($result);

@@ -13,7 +13,7 @@ if ($username == "" || $password == "") {
     echo "<script>alert('用户名或密码不符合格式！');history.go(-1);</script>";
     exit;
 } else {
-    $conn = conn();
+    $conn = connect();
     $sql = "select * from user where username='$username' and password='$password'";
     if ($result = mysqli_query($conn, $sql)) {
         $row = mysqli_fetch_row($result);

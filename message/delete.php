@@ -6,7 +6,7 @@ $author = $_GET['author'];
 // $text = base64_encode($_GET['text']);
 $time = $_GET['time'];
 $username = $_SESSION['username'];
-$conn = conn();
+$conn = connect();
 
 if ($username == $author || $username == "admin") {
     // $sql = "delete from message where username='$author' and text='$text'";
