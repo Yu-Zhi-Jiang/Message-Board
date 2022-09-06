@@ -1,9 +1,8 @@
 <?php
 session_start();
-include "../include/conn.php";
+include "../include/connect.php";
 
 $username = $_POST['username'];
-$_SESSION['username'] = $username;
 $password = $_POST['password'];
 
 if ($username == "" || $password == "") {
@@ -18,6 +17,7 @@ if ($username == "" || $password == "") {
     if ($result = mysqli_query($conn, $sql)) {
         $row = mysqli_fetch_row($result);
         if ($row) {
+            $_SESSION['username'] = $username;
             echo "<script>alert('登录成功！');window.location.href='../message/message.php'</script>";
         } else {
             echo "<script>alert('用户名或密码错误！');history.go(-1);</script>";

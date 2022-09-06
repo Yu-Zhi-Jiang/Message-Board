@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['username'] == "") {
+    echo "<script>alert('请先登录！');window.location.href='../login/login.html'</script>";
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +25,7 @@
             <td>时间</td>
         </tr>
         <?php
-        include "../include/conn.php";
+        include "../include/connect.php";
         
         $conn = connect();
         $sql = "select username,text,time from message";

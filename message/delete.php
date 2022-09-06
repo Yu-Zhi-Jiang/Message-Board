@@ -1,5 +1,5 @@
 <?php
-include "../include/conn.php";
+include "../include/connect.php";
 session_start();
 
 $author = $_GET['author'];
